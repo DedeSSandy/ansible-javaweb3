@@ -1,0 +1,24 @@
+---
+- name: Build and Package with Maven on Jenkins Slave
+  hosts: n4
+  tasks:
+    - name: Ensure ~/Ansibleproject directory is absent
+      file:
+        path: "~/Ansibleproject"
+        state: absent
+
+    - name: Create project directory
+      file:
+        path: "~/Ansibleproject"
+        state: directory
+
+    - name: Clone Git repository (if needed)
+      git:
+        repo: https://github.com/chikababy/Ansibleproject.git
+        dest: "~/Ansibleproject"
+
+    - name: Build Maven project
+      command: "mvn clean package"
+      args:
+        chdir: "~/Ansibleproject"
+...

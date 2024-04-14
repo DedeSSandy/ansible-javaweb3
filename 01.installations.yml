@@ -1,0 +1,22 @@
+#install and configure tools accross different servers
+---
+- name: Install Java, HTTPD, and Git on all hosts
+  hosts: all
+  become: true
+  roles:
+    - role: java
+    - role: httpd
+    - role: git
+
+- name: Install Tomcat on Group1 hosts
+  hosts: g1
+  become: true
+  roles:
+    - role: tomcat
+
+- name: Install Maven on Group2 hosts
+  hosts: g2
+  become: true
+  roles:
+    - role: maven
+...

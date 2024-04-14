@@ -1,0 +1,9 @@
+---
+- name: Testing artifacts
+  hosts: n4
+  tasks:
+    - name: Test the webapp using Maven
+      command: "mvn test"
+      args:
+        chdir: "~/Ansibleproject"
+...
