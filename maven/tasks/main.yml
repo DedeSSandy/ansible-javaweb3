@@ -1,0 +1,4 @@
+---
+# tasks file for maven
+
+- include_tasks: install.yml
