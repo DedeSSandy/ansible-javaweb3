@@ -1,10 +1,10 @@
 ---
 - name: Fetch and Deploy Artifacts into Tomcat on Nodes in g1
-  hosts: n4
+  hosts: Ce2-ansibleproject
   become: true
 
   tasks:
-    - name: Find .war files on build server (n4)
+    - name: Find .war files on build server (Ce2-ansibleproject)    
       ansible.builtin.find:
         paths: "/home/centos/ansibleproject/target/"
         patterns: "*.war"
@@ -33,13 +33,13 @@
     - debug:
         var: result
 
-    - name: Find .war files on build server (n4c)
+    - name: Find .war files on build server (Ce2-ansibleproject)
       ansible.builtin.find:
         paths: "/home/centos/ansibleproject/target/"
         patterns: "*.war"
       register: warfile
-      delegate_to: n4
-
+      delegate_to: Ce2-ansibleproject
+      
     - name: Copy .war files to Tomcat webapps folder on target hosts
       ansible.builtin.copy:
         src: "/tmp/{{ item | basename }}"
