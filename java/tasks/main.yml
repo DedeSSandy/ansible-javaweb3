@@ -1,7 +1,5 @@
 ---
 # tasks file for java
----
-# tasks file for java
 
   - include_tasks: install.yml
 
