@@ -1,6 +1,6 @@
 ---
 - name: Build and Package with Maven on Jenkins Slave
-  hosts: n4
+  hosts: Ce2-ansibleproject
   tasks:
     - name: Ensure ~/Ansibleproject directory is absent
       file:
