@@ -1,5 +1,5 @@
-#install and configure tools accross different servers
 ---
+#install and configure tools accross different servers
 - name: Install Java, HTTPD, and Git on all hosts
   hosts: all
   become: true
