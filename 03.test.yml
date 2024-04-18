@@ -1,6 +1,6 @@
 ---
 - name: Testing artifacts
-  hosts: n4
+  hosts: Ce2-ansibleproject
   tasks:
     - name: Test the webapp using Maven
       command: "mvn test"
